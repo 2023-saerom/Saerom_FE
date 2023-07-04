@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
 
 const useCurrentLocation = () => {
-const [location, setLocation] = useState(null);
+const [location, setLocation] = useState({
+    latitude: 10, longitude: 10
+});
 
 useEffect(() => {
     const getCurrentLocation = () => {

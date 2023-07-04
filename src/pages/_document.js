@@ -8,6 +8,7 @@ export default function Document() {
         <Main />
         <NextScript />
       </body>
+      <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=da237d77970aaa05abc10bd97ad4702d" />
     </Html>
   )
 }

@@ -13,9 +13,10 @@ export default function Home() {
     <MainFlex>
       <SearchSidebar/>
       <Map
-        style={{width:"100%", height:"100vh"}}
+        style={{width: "calc(100vw - 530px)", height:"100vh"}}
         center={{ lat: curLoc.latitude, lng: curLoc.longitude }}
-      />
+      >
+      </Map>
     </MainFlex>
   )
 }

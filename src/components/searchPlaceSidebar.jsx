@@ -1,7 +1,12 @@
 import { Toppeer, SidebarBox } from "@/styles";
 import { styled } from "styled-components";
+import { ListWarp, PlaceRenault } from "./placeRenault";
+import { dumbData } from "@/dumb";
+import { useState } from "react";
 
 export default function SearchPlaceSidebar(){
+    const [Data,setData] = useState(dumbData);
+
     return(
         <SidebarBox>
             <Toppeer>
@@ -10,6 +15,11 @@ export default function SearchPlaceSidebar(){
                     <Ipt placeholder="장소 검색하기"/>
                 </SebarH>
             </Toppeer>
+            <ListWarp style={{height:'calc( 100vh - 112px - 60px )'}}>
+                {Data.map((d, idx)=>{
+                    return <PlaceRenault info={d.info} name={d.name} phNum={d.phNum} type={d.type} key={idx}/>
+                })}
+            </ListWarp>
         </SidebarBox>
     )
 }

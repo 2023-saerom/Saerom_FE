@@ -1,13 +1,16 @@
+import { useRouter } from "next/router"
 import { styled } from "styled-components"
 
-export default function AuthModal(){
+export default function AuthModal({setState}){
+    const route = useRouter();
+
     return(
         <Blck>
             <ModalTopper>
                 adsf
                 <ButtHo>
-                    <Butt>취소</Butt>
-                    <Butt className="fill">로그인</Butt>
+                    <Butt onClick={()=>setState(false)}>취소</Butt>
+                    <Butt className="fill" onClick={()=>route.push('/auth/login')}>로그인</Butt>
                 </ButtHo>
             </ModalTopper>
         </Blck>

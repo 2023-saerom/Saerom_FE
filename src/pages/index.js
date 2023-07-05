@@ -8,6 +8,7 @@ import NavSidebar from '@/components/NavSidebar';
 import { useRouter } from 'next/router';
 import ChildLocationSidebar from '@/components/ChildLocationSIdebar';
 import ChildPage from '@/components/ChildList';
+import AddPatchSidebar from '@/components/AddPathSIdebar';
 const AuthModal = dynamic(() => import('@/components/AuthModal'), { ssr: false });
 const MainMap = dynamic(()=> import('@/components/MainMap'), { ssr: false });
 
@@ -26,7 +27,8 @@ export default function Home() {
             {here==='/search' && <SearchPlaceSidebar/>}
             {here==='/child/Loc' && <ChildLocationSidebar/>}
             {here==='/child/Add' && <ChildPage/>}
-            
+            {here==='/addPath' && <AddPatchSidebar/>}
+
             {here!=='/child/Add' && <MainMap />}
         </MainFlex>
     )

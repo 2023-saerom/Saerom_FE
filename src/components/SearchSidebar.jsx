@@ -15,6 +15,10 @@ export default function SearchSidebar(){
     )
 }
 
+const Movie = styled.img`
+    padding: 18px;
+`
+
 const TopInput = styled.input`
     border: none;
     border-radius: 19281226px;

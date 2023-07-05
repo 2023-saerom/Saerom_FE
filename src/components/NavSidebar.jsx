@@ -4,23 +4,30 @@ import { styled } from "styled-components"
 export default function NavSidebar(){
     const r = useRouter();
 
+    function changeRoute(path){
+        if (typeof window !== undefined)
+            r.push(path);
+        else
+            return 0;
+    }
+
     return(
         <NavMainC>
             <Logoimg src="/logo250.png"/>
             <TabWrapper>
-                <Tabber className={r.pathname == '/'}>
+                <Tabber className={r.pathname == '/'} onClick={changeRoute('/')}>
                     <img src="/sidenav/findPath.png"/>
                 </Tabber>
-                <Tabber className={r.pathname == '/search'}>
+                <Tabber className={r.pathname == '/search'} onClick={changeRoute('/search')}>
                     <img src="/sidenav/search.png"/>
                 </Tabber>
-                <Tabber className={r.pathname == '/child/Loc'}>
+                <Tabber className={r.pathname == '/child/Loc'} onClick={changeRoute('/child/Loc')}>
                     <img src="/sidenav/childLoc.png"/>
                 </Tabber>
-                <Tabber className={r.pathname == '/child/Add'}>
+                <Tabber className={r.pathname == '/child/Add'} onClick={changeRoute('/child/Add')}>
                     <img src="/sidenav/childAdd.png"/>
                 </Tabber>
-                <Tabber className={r.pathname == '/addPath'}>
+                <Tabber className={r.pathname == '/addPath'} onClick={changeRoute('/addPath')}>
                     <img src="/sidenav/addPath.png"/>
                 </Tabber>
             </TabWrapper>

@@ -1,4 +1,5 @@
 import { styled } from "styled-components"
+import { SidebarBox, Toppeer } from "@/styles"
 
 export default function SearchSidebar(){
     return(
@@ -14,24 +15,6 @@ export default function SearchSidebar(){
     )
 }
 
-const SidebarBox = styled.div`
-    background-color: white;
-    min-width: 530px;
-    height: 100vh;
-    z-index: 8;
-    box-shadow: 0 0 18px rgba(0, 0, 0, 0.15);;
-`
-
-const Movie = styled.img`
-    padding: 18px;
-`
-const Toppeer = styled.div`
-    background: #F8D648;
-    padding: 30px;
-    display: flex;
-    flex-direction: row;
-
-`
 const TopInput = styled.input`
     border: none;
     border-radius: 19281226px;

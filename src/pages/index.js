@@ -10,10 +10,6 @@ const AuthModal = dynamic(() => import('@/components/AuthModal'), { ssr: false }
 export default function Home() {
     const curLoc = useCurrentLocation();
     const [AuthPopupShowing, setAuthPopupShowing] = useState(false);
-
-    useEffect(()=>{
-        setAuthPopupShowing(true);
-    },[])
     
     return (
         <MainFlex>

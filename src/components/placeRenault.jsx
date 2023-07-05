@@ -36,7 +36,7 @@ const InnerH = styled.p`
 const InnerPH = styled.p`
     color: #257DDD;
     font-size: 20px;
-    font-family: omyu pretty;
+    font-family: 'om';
     margin: 0;
 `
 const InnerInfor = styled.p`

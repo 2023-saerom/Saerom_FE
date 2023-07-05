@@ -1,15 +1,15 @@
 import { styled } from "styled-components"
 
-export function PlaceRenault(props){
+export function PlaceRenault({name, phNum, type, info}){
     return(
         <ListInnerS>
-            <InnerH>{props.name}</InnerH>
+            <InnerH>{name}</InnerH>
             <ComboPhType>
-                <InnerPH>{props.phNum}</InnerPH>
+                <InnerPH>{phNum}</InnerPH>
                 <span/>
-                <InnerInfor>{props.type}</InnerInfor>
+                <InnerInfor>{type}</InnerInfor>
             </ComboPhType>
-            <InnerInfor>{props.info}</InnerInfor>
+            <InnerInfor>{info}</InnerInfor>
         </ListInnerS>
     )
 }

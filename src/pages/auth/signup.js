@@ -9,11 +9,11 @@ export default function SignUp(){
                 <RightWing>
                     <Header className={jua.className}>Sign Up</Header>
                     <TextboxContainer>
-                        <TextBox/>
-                        <TextBox/>
-                        <TextBox/>
-                        <TextBox/>
-                        <TextBox/>
+                        <TextBox placeholder="이름을 입력해주세요"/>
+                        <TextBox placeholder="아이디를 입력해주세요"/>
+                        <TextBox placeholder="비밀번호를 입력해주세요"/>
+                        <TextBox placeholder="비밀번호를 다시 입력해주세요"/>
+                        <TextBox placeholder="이메일을 입력해주세요"/>
                     </TextboxContainer>
                     <Btn>회원가입</Btn>
                 </RightWing>
@@ -58,7 +58,9 @@ const TextboxContainer = styled.div`
 `
 
 const TextBox = styled.input`
-    background-color: red;
+    background-color: white;
+    border: none;
+    font-size: 22px;
 `
 
 const Btn = styled.button`

@@ -5,10 +5,8 @@ export default function NavSidebar(){
     const r = useRouter();
 
     function changeRoute(path){
-        if (typeof window !== undefined)
+        if (process.browser)
             r.push(path);
-        else
-            return 0;
     }
 
     return(

@@ -9,24 +9,31 @@ export default function NavSidebar(){
             r.push(path);
     }
 
+    function logout(){
+        console.log('fucku')
+    }
+
     return(
         <NavMainC>
             <Logoimg src="/logo250.png"/>
             <TabWrapper>
-                <Tabber className={r.pathname == '/'} onClick={changeRoute('/')}>
+                <Tabber className={r.pathname == '/'} onClick={() => changeRoute('/')}>
                     <img src="/sidenav/findPath.png"/>
                 </Tabber>
-                <Tabber className={r.pathname == '/search'} onClick={changeRoute('/search')}>
+                <Tabber className={r.pathname == '/search'} onClick={() => changeRoute('/search')}>
                     <img src="/sidenav/search.png"/>
                 </Tabber>
-                <Tabber className={r.pathname == '/child/Loc'} onClick={changeRoute('/child/Loc')}>
+                <Tabber className={r.pathname == '/child/Loc'} onClick={() => changeRoute('/child/Loc')}>
                     <img src="/sidenav/childLoc.png"/>
                 </Tabber>
-                <Tabber className={r.pathname == '/child/Add'} onClick={changeRoute('/child/Add')}>
+                <Tabber className={r.pathname == '/child/Add'} onClick={() => changeRoute('/child/Add')}>
                     <img src="/sidenav/childAdd.png"/>
                 </Tabber>
-                <Tabber className={r.pathname == '/addPath'} onClick={changeRoute('/addPath')}>
+                <Tabber className={r.pathname == '/addPath'} onClick={() => changeRoute('/addPath')}>
                     <img src="/sidenav/addPath.png"/>
+                </Tabber>
+                <Tabber onClick={()=> logout()}>
+                    <img src="/sidenav/logOut.png"/>
                 </Tabber>
             </TabWrapper>
         </NavMainC>

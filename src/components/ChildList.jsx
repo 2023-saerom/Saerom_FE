@@ -6,6 +6,9 @@ export default function ChildPage(){
     const [Data, setData] = useState(dumbChild);
     return(
         <MMM>
+            <PgHd>
+                자녀 관리
+            </PgHd>
             <Ho>
                 {Data.map((d,idx)=>{
                     return <ChildT Ph={d.Ph} name={d.name} xes={d.xes} key={idx}/>
@@ -18,6 +21,14 @@ export default function ChildPage(){
 const MMM = styled.div`
     width: calc(100vw - 100px);
     height: 100vw;
+`
+const PgHd = styled.p`
+    font-family: 'om';
+    font-size: 52px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: calc(50% + 50px);
+    top: 10%;
 `
 
 const Ho = styled.div`

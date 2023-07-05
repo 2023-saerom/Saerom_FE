@@ -62,6 +62,11 @@ const TextBox = styled.input`
     border: none;
     font-size: 22px;
     font-family: 'om';
+    padding: 10px 15px;
+
+    &::placeholder{
+        color: #C4C4C4;
+    }
 `
 
 const Btn = styled.button`

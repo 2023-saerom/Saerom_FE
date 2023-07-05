@@ -4,11 +4,6 @@ import useCurrentLocation from '@/hooks/useLatLng';
 import SearchSidebar from '@/components/SearchSidebar';
 import { styled } from 'styled-components';
 
-const jua = Jua({
-  weight: ['400'],
-  preload: false,
-})
-
 export default function Home() {
   const curLoc = useCurrentLocation()
 

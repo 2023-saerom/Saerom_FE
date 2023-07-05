@@ -6,6 +6,7 @@ import { createPortal } from 'react-dom';
 import dynamic from 'next/dynamic';
 import NavSidebar from '@/components/NavSidebar';
 import { useRouter } from 'next/router';
+import ChildLocationSidebar from '@/components/ChildLocationSIdebar';
 const AuthModal = dynamic(() => import('@/components/AuthModal'), { ssr: false });
 const MainMap = dynamic(()=> import('@/components/MainMap'), { ssr: false });
 
@@ -19,8 +20,10 @@ export default function Home() {
         <MainFlex>
             {AuthPopupShowing ? createPortal(<AuthModal setState={setAuthPopupShowing}/>,document.body) : null}
             {isLogined ? <NavSidebar/> : null}
+            
             {here==='/' && <SearchSidebar/>}
             {here==='/search' && <SearchPlaceSidebar/>}
+            {here==='/child/Loc' && <ChildLocationSidebar/>}
             <MainMap />
         </MainFlex>
     )

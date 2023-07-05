@@ -1,7 +1,16 @@
 import { styled } from "styled-components"
 import { FlexCenter } from "@/styles"
+import { useState } from "react"
 
 export default function SignUp(){
+    const [value, setValue] = useState({
+        id: '',
+        pw: '',
+        name: '',
+        pwrep: '',
+        email: '',
+    });
+
     return(
         <FlexCenter className="ly">
             <LoginMainContainer>
@@ -9,11 +18,11 @@ export default function SignUp(){
                 <RightWing>
                     <Header>Sign Up</Header>
                     <TextboxContainer>
-                        <TextBox placeholder="이름을 입력해주세요"/>
-                        <TextBox placeholder="아이디를 입력해주세요"/>
-                        <TextBox placeholder="비밀번호를 입력해주세요"/>
-                        <TextBox placeholder="비밀번호를 다시 입력해주세요"/>
-                        <TextBox placeholder="이메일을 입력해주세요"/>
+                        <TextBox value={value.name} onChange={(e)=>setValue({...value, name: e.target.value})} placeholder="이름을 입력해주세요"/>
+                        <TextBox value={value.id} onChange={(e)=>setValue({...value, id: e.target.value})} placeholder="아이디를 입력해주세요"/>
+                        <TextBox type="password" value={value.pw} onChange={(e)=>setValue({...value, pw: e.target.value})} placeholder="비밀번호를 입력해주세요"/>
+                        <TextBox type="password" value={value.pwrep} onChange={(e)=>setValue({...value, pwrep: e.target.value})} placeholder="비밀번호를 다시 입력해주세요"/>
+                        <TextBox value={value.email} onChange={(e)=>setValue({...value, email: e.target.value})} placeholder="이메일을 입력해주세요"/>
                     </TextboxContainer>
                     <Btn>회원가입</Btn>
                 </RightWing>

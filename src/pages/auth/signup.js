@@ -1,9 +1,10 @@
 import { jua } from "@/geo-si-gie/fonts"
 import { styled } from "styled-components"
+import { FlexCenter } from "@/styles"
 
 export default function SignUp(){
     return(
-        <FlexCenter>
+        <FlexCenter className="ly">
             <LoginMainContainer>
                 <img src="/signUpSide.png" />
                 <RightWing>
@@ -22,13 +23,6 @@ export default function SignUp(){
     )
 }
 
-const FlexCenter = styled.div`
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #FEF7DA;
-`
 const LoginMainContainer = styled.div`
     display: flex;
     width: 1000px;

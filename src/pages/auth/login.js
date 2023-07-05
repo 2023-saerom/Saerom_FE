@@ -1,7 +1,14 @@
 import { styled } from "styled-components"
 import { FlexCenter } from "@/styles"
+import { useRouter } from "next/router"
 
 export default function Login(){
+    const route = useRouter();
+
+    function goSU(){
+        route.push('signup');
+    }
+
     return(
         <FlexCenter className="ly">
             <MainContainer>
@@ -12,7 +19,7 @@ export default function Login(){
                 <IPIP placeholder="아이디를 입력해주세요"/>
                 <IPIP placeholder="비밀번호를 입력해주세요"/>
                 <Btttt>로그인</Btttt>
-                <Bt2>회원가입</Bt2>
+                <Bt2 onClick={goSU}>회원가입</Bt2>
             </MainContainer>
         </FlexCenter>
     )

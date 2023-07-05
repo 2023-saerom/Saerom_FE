@@ -32,7 +32,7 @@ export default function NavSidebar(){
                 <Tabber className={r.pathname == '/addPath'} onClick={() => changeRoute('/addPath')}>
                     <img src="/sidenav/addPath.png"/>
                 </Tabber>
-                <Tabber onClick={()=> logout()}>
+                <Tabber onClick={()=> logout()} style={{marginTop:'330px'}}>
                     <img src="/sidenav/logOut.png"/>
                 </Tabber>
             </TabWrapper>

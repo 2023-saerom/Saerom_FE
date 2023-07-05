@@ -1,4 +1,3 @@
-import { jua } from "@/geo-si-gie/fonts"
 import { styled } from "styled-components"
 import { FlexCenter } from "@/styles"
 
@@ -8,7 +7,7 @@ export default function SignUp(){
             <LoginMainContainer>
                 <img src="/signUpSide.png" />
                 <RightWing>
-                    <Header className={jua.className}>Sign Up</Header>
+                    <Header>Sign Up</Header>
                     <TextboxContainer>
                         <TextBox placeholder="이름을 입력해주세요"/>
                         <TextBox placeholder="아이디를 입력해주세요"/>
@@ -34,6 +33,7 @@ const LoginMainContainer = styled.div`
 const Header = styled.p`
     font-size: 42px;
     margin: 0;
+    font-family: 'jua';
 `
 
 const RightWing = styled.div`

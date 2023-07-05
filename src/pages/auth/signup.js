@@ -61,6 +61,7 @@ const TextBox = styled.input`
     background-color: white;
     border: none;
     font-size: 22px;
+    font-family: 'om';
 `
 
 const Btn = styled.button`

@@ -16,7 +16,7 @@ export default function SearchSidebar(){
 
 const SidebarBox = styled.div`
     background-color: white;
-    width: 530px;
+    min-width: 530px;
     height: 100vh;
     z-index: 8;
     box-shadow: 0 0 18px rgba(0, 0, 0, 0.15);;

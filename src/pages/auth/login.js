@@ -12,6 +12,9 @@ export default function Login(){
 }
 
 const MainContainer = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 560px;
     width: 900px;
     border-radius: 15px;

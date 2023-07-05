@@ -1,10 +1,13 @@
-import { Inter } from 'next/font/google'
+import { Jua } from 'next/font/google'
 import { Map } from 'react-kakao-maps-sdk'
 import useCurrentLocation from '@/hooks/useLatLng';
 import SearchSidebar from '@/components/SearchSidebar';
 import { styled } from 'styled-components';
 
-const inter = Inter({ subsets: ['latin'] })
+const jua = Jua({
+  weight: ['400'],
+  preload: false,
+})
 
 export default function Home() {
   const curLoc = useCurrentLocation()

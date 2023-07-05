@@ -1,9 +1,14 @@
 import { styled } from "styled-components"
 import { FlexCenter } from "@/styles"
 import { useRouter } from "next/router"
+import { useState } from "react";
 
 export default function Login(){
     const route = useRouter();
+    const [auth,setAuth] = useState({
+        id: '',
+        pw: '',
+    })
 
     function goSU(){
         route.push('signup');
@@ -16,8 +21,8 @@ export default function Login(){
                     <LoIm src="/logo250.png" />
                     <DaeGaRi>Log In</DaeGaRi>
                 </TopperS>
-                <IPIP placeholder="아이디를 입력해주세요"/>
-                <IPIP placeholder="비밀번호를 입력해주세요"/>
+                <IPIP value={auth.id} onChange={(a)=>setAuth({id:a.target.value, pw:auth.pw})} placeholder="아이디를 입력해주세요"/>
+                <IPIP type="password" value={auth.pw} onChange={(a)=>setAuth({id:auth.id, pw:a.target.value})} placeholder="비밀번호를 입력해주세요"/>
                 <Btttt>로그인</Btttt>
                 <Bt2 onClick={goSU}>회원가입</Bt2>
             </MainContainer>

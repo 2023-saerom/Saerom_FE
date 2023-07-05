@@ -66,4 +66,18 @@ const TextBox = styled.input`
 
 const Btn = styled.button`
     width: 100%;
+    font-family: 'om';
+    border-radius: 10px;
+    padding: 18px;
+    border: none;
+    background: #FEF7DA;
+    color: #F8D648;
+    font-size: 24px;
+    transition: 250ms ease-in-out;
+
+    &:hover{
+        filter: brightness(95%);
+        color: darkgray;
+        transition: 250ms ease-in-out;
+    }
 `

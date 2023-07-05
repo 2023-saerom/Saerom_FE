@@ -7,7 +7,7 @@ export default function AuthModal({setState}){
     return(
         <Blck>
             <ModalTopper>
-                adsf
+                <img src="/loginPopupChick.png" height={232} width={380} />
                 <ButtHo>
                     <Butt onClick={()=>setState(false)}>취소</Butt>
                     <Butt className="fill" onClick={()=>route.push('/auth/login')}>로그인</Butt>
@@ -20,10 +20,12 @@ export default function AuthModal({setState}){
 const ModalTopper = styled.div`
     background-color: white;
     display: flex;
+    gap: 54px;
     flex-direction: column;
     border-radius: 10px;
     width: 440px;
     padding: 70px 180px;
+    align-items: center;
 `
 
 const Blck = styled.div`

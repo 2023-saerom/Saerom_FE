@@ -3,67 +3,69 @@ import 'leaflet/dist/leaflet.css';
 import { useRouter } from "next/router";
 import { dumbData, dumbPlace } from "@/dumb";
 import { useState } from "react";
-
-export default function MainMap(){
-    const here = useRouter().route;
-    const polyRoute= [
+const polyRoute= [
         [
+            37.543736,
             127.03895,
-            37.543736
         ],
         [
+            37.543741,
             127.039067,
-            37.543741
         ],
         [
+            37.5438,
             127.039237,
-            37.5438
         ],
         [
+            37.543817,
             127.039399,
-            37.543817
         ],
         [
+            37.543887,
             127.039671,
-            37.543887
         ],
         [
+            37.544145,
             127.04031,
-            37.544145
         ],
         [
+            37.544181,
             127.040478,
-            37.544181
         ],
         [
+            37.544191,
             127.040641,
-            37.544191
         ],
         [
+            37.544181,
             127.040772,
-            37.544181
         ],
         [
+            37.544004,
             127.041439,
-            37.544004
         ],
         [
+            37.5449,
             127.041826,
-            37.5449
         ],
         [
+            37.544805,
             127.042182,
-            37.544805
         ]
     ];
+export default function MainMap(){
+    const here = useRouter().route;
+    
 
 
     return(
-        <MapContainer center={[37.6379, 127.0326]} zoom={14} className="leaflet-container" style={{width: '-webkit-fill-available', height: '100vh', zIndex:1}} >
+        <MapContainer center={here!=='/search' ? [37.544181,127.040478] : [37.6379, 127.0326]} zoom={14} className="leaflet-container" style={{width: '-webkit-fill-available', height: '100vh', zIndex:1}} >
             <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"/>
             <Marker position={[37.6379, 127.0326]}/>
+
+            <Polyline positions={polyRoute} pathOptions={{color: 'red'}}/>
         </MapContainer>
     )
 }

@@ -329,7 +329,7 @@ export default function MainMap(){
     const here = useRouter().route;
     
     return(
-        <MapContainer center={here!=='/search' ? [37.53454, 127.059877] : [37.6379, 127.0326]} zoom={here!=='/search' ? 13.5 : 14} className="leaflet-container" style={{width: '-webkit-fill-available', height: '100vh', zIndex:1}} >
+        <MapContainer center={here==='/search' || here==='/child/Loc' ? [37.6379, 127.0326] : [37.53454, 127.059877]} zoom={here!=='/search' ? 13.5 : 14} className="leaflet-container" style={{width: '-webkit-fill-available', height: '100vh', zIndex:1}} >
             <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"/>

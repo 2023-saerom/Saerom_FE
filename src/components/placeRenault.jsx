@@ -27,6 +27,7 @@ const ListInnerS = styled.div`
     flex-direction: column;
     padding: 30px 0;
     border-bottom: 1px #818181 solid;
+    cursor: pointer;
 `
 const InnerH = styled.p`
     font-size: 22px;

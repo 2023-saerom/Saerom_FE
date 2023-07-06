@@ -10,7 +10,9 @@ export default function NavSidebar(){
     }
 
     function logout(){
-        console.log('fucku')
+        console.log('fucku');
+        localStorage.removeItem('lg');
+        r.push('/')
     }
 
     return(

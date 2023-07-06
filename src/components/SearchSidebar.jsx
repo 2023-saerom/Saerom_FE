@@ -1,11 +1,17 @@
 import { styled } from "styled-components";
 import { SidebarBox, Toppeer } from "@/styles";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ListWarp, PlaceRenault } from "./placeRenault";
 import { dumbData } from "@/dumb";
+import { useRouter } from "next/router";
 
 export default function SearchSidebar(){
     const [Data, setData] = useState(dumbData);
+    const r = useRouter();
+    const [isLogined, setLogined] = useState(false);
+    useEffect(()=>{
+        setLogined(localStorage.getItem('lg'));
+    })
 
     return(
         <SidebarBox>
@@ -18,6 +24,7 @@ export default function SearchSidebar(){
                 
             </Toppeer>
             <ListWarp>
+                {!isLogined && <Btn onClick={()=> r.push('/auth/login')}>로그잉</Btn>}
                 {Data.map((d, idx)=>{
                     return <PlaceRenault name={d.name} phNum={d.phNum} info={d.info} type={d.type} key={idx}/>
                 })}
@@ -25,6 +32,25 @@ export default function SearchSidebar(){
         </SidebarBox>
     )
 }
+
+const Btn = styled.button`
+    width: 100%;
+    font-family: 'om';
+    border-radius: 10px;
+    padding: 18px;
+    border: none;
+    background: #FEF7DA;
+    color: #F8D648;
+    font-size: 24px;
+    transition: 250ms ease-in-out;
+    cursor: pointer;
+
+    &:hover{
+        filter: brightness(95%);
+        color: darkgray;
+        transition: 250ms ease-in-out;
+    }
+`
 
 const Movie = styled.img`
     padding: 18px;

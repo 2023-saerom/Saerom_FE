@@ -2,7 +2,7 @@ import { MapContainer, TileLayer, Polyline, Marker } from "react-leaflet";
 import 'leaflet/dist/leaflet.css';
 import { useRouter } from "next/router";
 import { dumbData, dumbPlace } from "@/dumb";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 const polyRoute= [
     [
         37.547168,
@@ -327,6 +327,10 @@ const polyRoute= [
 ];
 export default function MainMap(){
     const here = useRouter().route;
+    const [isLogined, setLogined] = useState(false);
+    useEffect(()=>{
+        setLogined(localStorage.getItem('lg'));
+    })
     
     return(
         <MapContainer center={here==='/search' || here==='/child/Loc' ? [37.6379, 127.0326] : [37.53454, 127.059877]} zoom={here!=='/search' ? 13.5 : 14} className="leaflet-container" style={{width: '-webkit-fill-available', height: '100vh', zIndex:1}} >
@@ -335,9 +339,9 @@ export default function MainMap(){
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"/>
             <Marker position={[37.6379, 127.0326]} />
 
-            <Polyline positions={polyRoute} pathOptions={{color: 'blue', weight: 10}}/>
+            {isLogined && <><Polyline positions={polyRoute} pathOptions={{color: 'blue', weight: 10}}/>
             <Marker position={polyRoute[0]}/>
-            <Marker position={polyRoute[polyRoute.length-1]}/>
+            <Marker position={polyRoute[polyRoute.length-1]}/></>}
         </MapContainer>
     )
 }

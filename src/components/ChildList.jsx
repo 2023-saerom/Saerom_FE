@@ -50,8 +50,8 @@ function ChildT({xes, name, Ph}){
                 <Up>{name}</Up>
                 <Sub>{Ph}</Sub>
                 <div style={{display: 'flex', flexDirection:'row', gap:'10px'}}>
-                    <IamBtn src='/btn/delbtn.png'/>
-                    <IamBtn src='/btn/editbtn.png'/>
+                    <IamBtn src='/btn/delBtn.png' />
+                    <IamBtn src='/btn/editBtn.png' />
                 </div>
             </Mainbox>
             <div style={{borderRadius:"100%", background:"#ECECEC", width:"240px", height:"20px"}}/>

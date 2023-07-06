@@ -92,10 +92,10 @@ export const dumbData = [
 ];  
 
 export const dumbChild = [
-    {"name": "김지영", "Ph": "010 1234 5678", "xes": "female"},
+    {"name": "조조", "Ph": "010 1234 5678", "xes": "female"},
     {"name": "송지현", "Ph": "010 2345 6789", "xes": "female"},
     {xes: 'female', Ph: '209 1293 1398', name: '초 갈'},
-    {xes: 'female', Ph: '209 1293 1398', name: '조조'},
+    {xes: 'male', Ph: '010 2340 8160', name: '유연준'},
     {xes: 'male', Ph: '209 2345 1293', name: '장비'},
     {xes: 'female', Ph: '209 1293 1398', name: '여포'},
 ]

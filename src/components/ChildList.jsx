@@ -40,6 +40,10 @@ const Ho = styled.div`
     left: calc(50% + 50px);
     top: 50%;
     transform: translate(-50%, -50%);
+    scrollbar-width: 0;
+    &::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+}
 `
 
 function ChildT({xes, name, Ph}){

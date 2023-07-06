@@ -13,6 +13,12 @@ export default function Login(){
     function goSU(){
         route.push('signup');
     }
+    function goadd(){
+        if(auth.id && auth.pw){
+            localStorage.setItem('lg', 'true');
+            route.push('/');
+        }
+    }
 
     return(
         <FlexCenter className="ly">
@@ -23,7 +29,7 @@ export default function Login(){
                 </TopperS>
                 <IPIP value={auth.id} onChange={(a)=>setAuth({id:a.target.value, pw:auth.pw})} placeholder="아이디를 입력해주세요"/>
                 <IPIP type="password" value={auth.pw} onChange={(a)=>setAuth({id:auth.id, pw:a.target.value})} placeholder="비밀번호를 입력해주세요"/>
-                <Btttt>로그인</Btttt>
+                <Btttt onClick={goadd}>로그인</Btttt>
                 <Bt2 onClick={goSU}>회원가입</Bt2>
             </MainContainer>
         </FlexCenter>

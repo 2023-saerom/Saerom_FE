@@ -15,6 +15,7 @@ export const FlexCenter = styled.div`
 export const SidebarBox = styled.div`
     background-color: white;
     min-width: 530px;
+    width: 530px;
     height: 100vh;
     z-index: 8;
     box-shadow: 0 0 18px rgba(0, 0, 0, 0.15);;

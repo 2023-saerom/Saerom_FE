@@ -335,7 +335,7 @@ export default function MainMap(){
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"/>
             <Marker position={[37.6379, 127.0326]} />
 
-            <Polyline positions={polyRoute} pathOptions={{color: 'limegreen'}}/>
+            <Polyline positions={polyRoute} pathOptions={{color: 'blue', weight: 10}}/>
             <Marker position={polyRoute[0]}/>
             <Marker position={polyRoute[polyRoute.length-1]}/>
         </MapContainer>
